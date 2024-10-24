@@ -1,5 +1,5 @@
 {
-  "name": "esbuild-plugin-debug-switch",
+  "name": "@tsukina-7mochi/esbuild-plugin-debug-switch",
   "version": "0.1.0",
   "exports": {
     ".": "./mod.ts",
