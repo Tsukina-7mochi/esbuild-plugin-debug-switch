@@ -83,4 +83,5 @@ await esbuild.build({
 
 | Runtime | Support |
 | ------- | ------- |
+| Node.js | ✓      |
 | Deno    | ✓      |
