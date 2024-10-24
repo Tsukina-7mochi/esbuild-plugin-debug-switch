@@ -23,16 +23,14 @@
     "useTabs": false
   },
   "tasks": {
-    "build": "cd example && deno run --allow-read --allow-write --allow-run --allow-env build.ts"
+    "example:deno": "cd example && deno run --allow-read --allow-write --allow-run --allow-env --config ../deno.json build.mjs",
+    "example:node": "cd example && npm run build",
+    "example:clean": "rm -rf example/dist"
   },
   "license": "MIT",
   "imports": {
-    "esbuild": "npm:esbuild@^0.24.0"
-  },
-  "scope": {
-    "./example": {
-      "esbuild-plugin-debug-switch": "./mod.ts",
-      "esbuild-plugin-debug-switch/plugin": "./plugin.ts"
-    }
+    "esbuild": "npm:esbuild@^0.24.0",
+    "esbuild-plugin-debug-switch": "./mod.ts",
+    "esbuild-plugin-debug-switch/plugin": "./plugin.ts"
   }
 }
