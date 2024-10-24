@@ -1,6 +1,6 @@
 import * as esbuild from 'esbuild';
 
-type DebugSwitchPluginOptions = {
+export type DebugSwitchPluginOptions = {
   isDebug: boolean;
   filter?: RegExp;
 };
@@ -10,7 +10,8 @@ export const debugSwitchPlugin = (
 ): esbuild.Plugin => {
   const pluginName = 'esbuild-plugin-debug-switch';
   const isDebug = options.isDebug;
-  const filter = options.filter ?? /^esbuild-plugin-debug-switch$/;
+  const filter = options.filter ??
+    /^((jsr:\/?)?@tsukina-7mochi\/)?esbuild-plugin-debug-switch$/;
 
   return {
     name: pluginName,
