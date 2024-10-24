@@ -1,6 +1,6 @@
 # esbuild-plugin-debug-switch
 
-A plugin to switch between production build and development build.
+A plugin to switch debug mode to be enabled or disabled in the build.
 This plugin works great when static brunch is removed by esbuild optimization (`minify = true`).
 
 ## Usage
