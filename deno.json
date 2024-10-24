@@ -1,0 +1,38 @@
+{
+  "name": "esbuild-plugin-debug-switch",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./mod.ts",
+    "./plugin": "./plugin.ts"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noUnusedParameters": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "proseWrap": "always",
+    "singleQuote": true,
+    "useTabs": false
+  },
+  "tasks": {
+    "build": "cd example && deno run --allow-read --allow-write --allow-run --allow-env build.ts"
+  },
+  "license": "MIT",
+  "imports": {
+    "esbuild": "npm:esbuild@^0.24.0"
+  },
+  "scope": {
+    "./example": {
+      "esbuild-plugin-debug-switch": "./mod.ts",
+      "esbuild-plugin-debug-switch/plugin": "./plugin.ts"
+    }
+  }
+}
