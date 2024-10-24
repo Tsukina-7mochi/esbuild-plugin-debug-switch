@@ -2,8 +2,12 @@ import * as esbuild from 'esbuild';
 
 /** Options of esbuild-plugin-debug-switch. */
 export type DebugSwitchPluginOptions = {
-  /** Debug mode switch value that is passed to imports as constants. */
+  /** Debug mode switch value that is passed to scripts as constants. */
   isDebug: boolean;
+
+  /** Variables passed to the scripts. Values must be JSON-ifiable. */
+  env?: Record<string, unknown>;
+
   /**
    * Filter for the name of plugin. Used for telling plugin alternative
    *
@@ -19,6 +23,7 @@ export const debugSwitchPlugin = (
 ): esbuild.Plugin => {
   const pluginName = 'esbuild-plugin-debug-switch';
   const isDebug = options.isDebug;
+  const env = options.env ?? {};
   const filter = options.filter ??
     /^((jsr:\/?)?@tsukina-7mochi\/)?esbuild-plugin-debug-switch$/;
 
@@ -32,9 +37,12 @@ export const debugSwitchPlugin = (
         };
       });
 
+      const contents = `export const isDebug = ${isDebug};` +
+        `export const env = ${JSON.stringify(env)};`;
+
       build.onLoad({ filter, namespace: pluginName }, () => {
         return {
-          contents: `export const isDebug = ${isDebug};`,
+          contents,
           loader: 'ts' as const,
         };
       });
