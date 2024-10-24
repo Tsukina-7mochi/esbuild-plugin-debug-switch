@@ -51,6 +51,35 @@ or
 (()=>{console.log("This is production mode!");})();
 ```
 
+### Passing other values
+
+You can pass other values with `env` options. The `env` is key-value object
+that can be serialized to JSON.
+
+
+```typescript
+import { env } from 'esbuild-plugin-debug-switch';
+
+console.log(`version ${env.version}`);
+```
+
+```typescript
+await esbuild.build({
+  entryPoints: ['main.ts'],
+  outfile: 'main.dev.js',
+  bundle: true,
+  minify: true,
+  plugins: [
+    debugSwitchPlugin({
+      isDebug,
+      env: { version: '1.0.0' },
+    })
+  ],
+}),
+```
+
+
+
 ### Import plugin with alternative name
 
 When importing the plugin with the other name than `esbuild-plugin-debug-switch`,
