@@ -22,6 +22,9 @@ And run build with the plugin as the following:
 
 ```typescript
 # build.ts
+import * as esbuild from 'esbuild';
+import { debugSwitchPlugin } from 'esbuild-plugin-debug-switch/plugin';
+
 const isDebug = true;
 
 await esbuild.build({
@@ -57,6 +60,9 @@ import { isDebug } from 'debug-switch';
 
 ```typescript
 # build.ts
+import * as esbuild from 'esbuild';
+import { debugSwitchPlugin } from 'esbuild-plugin-debug-switch/plugin';
+
 const isDebug = true;
 
 await esbuild.build({
