@@ -1,10 +1,19 @@
 import * as esbuild from 'esbuild';
 
+/** Options of esbuild-plugin-debug-switch. */
 export type DebugSwitchPluginOptions = {
+  /** Debug mode switch value that is passed to imports as constants. */
   isDebug: boolean;
+  /**
+   * Filter for the name of plugin. Used for telling plugin alternative
+   *
+   * name used in import statements. The default value is
+   * `/^((jsr:\/?)?@tsukina-7mochi\/)?esbuild-plugin-debug-switch$/`
+   */
   filter?: RegExp;
 };
 
+/** A plugin for esbuild to switch between production and development build.*/
 export const debugSwitchPlugin = (
   options: DebugSwitchPluginOptions,
 ): esbuild.Plugin => {
