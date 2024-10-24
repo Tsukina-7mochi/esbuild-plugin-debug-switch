@@ -5,6 +5,8 @@ This plugin works great when static brunch is removed by esbuild optimization (`
 
 ## Usage
 
+We recommend adding this package to your project via `npx jsr add` or `deno add`.
+
 Import `esbuild-plugin-debug-switch` in your source file:
 
 ```typescript
