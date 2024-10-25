@@ -10,9 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@tsukina-7mochi/esbuild-plugin-debug-switch": "npm:@jsr/tsukina-7mochi__esbuild-plugin-debug-switch@^0.1.0",
     "esbuild": "^0.24.0",
-    "esbuild-plugin-debug-switch": "npm:@jsr/tsukina-7mochi__esbuild-plugin-debug-switch@^0.1.0",
+    "esbuild-plugin-debug-switch": "npm:@jsr/tsukina-7mochi__esbuild-plugin-debug-switch@latest",
     "jsr": "^0.13.2"
   }
 }
